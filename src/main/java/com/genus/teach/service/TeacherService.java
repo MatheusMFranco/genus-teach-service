@@ -72,19 +72,17 @@ public class TeacherService implements GenusService<Teacher, TeacherDto, Teacher
         return repository.save(teacher);
     }
 
+    private Specification<Teacher> isPresentGet(Optional<Specification<Teacher>> optional) {
+        return optional.isPresent() ? optional.get() : null;
+    }
+
     private Specification<Teacher> filterFactory(TeacherFilter filter) {
-        return like(NAME, filter.getName()).get()
-            .and(
-                equal(LANGUAGE, filter.getLanguage()).get()
-            ).and(
-                equal(STATUS, filter.getStatus()).get()
-            ).and(
-                between(SCORE, filter.getStartScore(), filter.getEndScore()).get()
-            ).and(
-                between(CASH, filter.getStartCash(), filter.getEndCash()).get()
-            ).and(
-                between(DATE, filter.getStartDate(), filter.getEndDate()).get()
-            );
+        return isPresentGet(like(NAME, filter.getName()))
+            .and(isPresentGet(equal(LANGUAGE, filter.getLanguage())))
+            .and(isPresentGet(equal(STATUS, filter.getStatus())))
+            .and(isPresentGet(between(SCORE, filter.getStartScore(), filter.getEndScore())))
+            .and(isPresentGet(between(CASH, filter.getStartCash(), filter.getEndCash())))
+            .and(isPresentGet(between(DATE, filter.getStartDate(), filter.getEndDate())));
     }
 
 }

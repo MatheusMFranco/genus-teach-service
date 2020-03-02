@@ -1,8 +1,10 @@
 package com.genus.teach.constant;
 
-public interface TeacherConstant {
+public abstract class TeacherConstant {
 
-	public final static String ENTITY_ALL = "teachers";
-	public final static String ENTITY_ONE = "teacher";
+	private TeacherConstant(){}
+
+	public static final String ENTITY_ALL = "teachers";
+	public static final String ENTITY_ONE = "teacher";
 
 }

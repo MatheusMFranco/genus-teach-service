@@ -28,7 +28,7 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo metaInfo() {
-		ApiInfo apiInfo = new ApiInfo(
+		return new ApiInfo(
 				"Genus Teacher API REST",
 				"API REST of Genus Teacher Service",
 				"1.0",
@@ -38,7 +38,6 @@ public class SwaggerConfig {
 				"Apache License Version 2.0",
 				"https://www.apache.org/licesen.html", new ArrayList<>()
 		);
-		return apiInfo;
 	}
 
 }

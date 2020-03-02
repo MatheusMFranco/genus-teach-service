@@ -7,7 +7,9 @@ import org.springframework.util.StringUtils;
 
 import com.genus.teach.model.Teacher;
 
-public class TeacherSpecification {
+public abstract class TeacherSpecification {
+
+	private TeacherSpecification(){}
 
 	public static Optional<Specification<Teacher>> like(String key, Optional<String> value) {
 		if (isBlank(value)) {

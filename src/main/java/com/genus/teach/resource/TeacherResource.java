@@ -40,7 +40,7 @@ public class TeacherResource implements GenusResource<Teacher, TeacherDto, Teach
                 RequestLogEnum.COUNT,
                 TeacherConstant.ENTITY_ALL
         ));
-        return new ResponseEntity<Long>(service.count(filter), HttpStatus.OK);
+        return new ResponseEntity<>(service.count(filter), HttpStatus.OK);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class TeacherResource implements GenusResource<Teacher, TeacherDto, Teach
                 RequestLogEnum.FIND,
                 TeacherConstant.ENTITY_ALL, pageable
         ));
-        return new ResponseEntity<Page<Teacher>>(service.find(filter, pageable), HttpStatus.OK);
+        return new ResponseEntity<>(service.find(filter, pageable), HttpStatus.OK);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class TeacherResource implements GenusResource<Teacher, TeacherDto, Teach
                 Teacher_.ID,
                 id.toString()
         ));
-        return new ResponseEntity<Teacher>(service.findById(id), HttpStatus.OK);
+        return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class TeacherResource implements GenusResource<Teacher, TeacherDto, Teach
                 Teacher_.ID,
                 id.toString()
         ));
-        return new ResponseEntity<Boolean>(service.exists(id), HttpStatus.OK);
+        return new ResponseEntity<>(service.exists(id), HttpStatus.OK);
     }
 
     @Override
@@ -88,7 +88,7 @@ public class TeacherResource implements GenusResource<Teacher, TeacherDto, Teach
                 RequestLogEnum.SAVE,
                 TeacherConstant.ENTITY_ONE
         ));
-        return new ResponseEntity<Teacher>(service.save(teacher), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.save(teacher), HttpStatus.CREATED);
     }
 
 }

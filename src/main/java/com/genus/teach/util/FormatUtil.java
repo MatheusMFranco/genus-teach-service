@@ -8,6 +8,8 @@ import com.genus.teach.enumeration.RequestLogEnum;
 
 public abstract class FormatUtil {
 
+	private FormatUtil(){}
+
 	public static final DateTimeFormatter DATE = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 
 	public static StringBuilder formatLogBuilder(RequestLogEnum type, String entity) {
